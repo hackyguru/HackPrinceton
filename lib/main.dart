@@ -1,7 +1,9 @@
+
 import 'package:flutter/material.dart';
 import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:flutter/rendering.dart';
 import 'package:lottie/lottie.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(MyApp());
@@ -90,6 +92,90 @@ class _HomeState extends State<Home> {
                       ],
                     ),
                   ]),
+                ),
+                SizedBox(height: 20),
+                Text("Use your eyes to navigate through the options and blink 3 times to select",textAlign: TextAlign.center, style: GoogleFonts.montserrat(color: Colors.black,fontWeight: FontWeight.w500, fontSize: 25)),
+                SizedBox(height: 50),
+                Column(
+                  children: [
+                    
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Container(
+                          width: 500,
+                          height: 120,
+                          decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                          gradient: LinearGradient(colors: [Color(0xFF9A17CF), Colors.purple])
+                        ),
+                        child: Center(child: Text("Request for rest room",textAlign: TextAlign.center, style: GoogleFonts.montserrat(color: Colors.white,fontWeight: FontWeight.w500, fontSize: 25))),
+                        ),
+                        Container(
+                          width: 500,
+                          height: 120,
+                          decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                          gradient: LinearGradient(colors: [Color(0xFF9A17CF), Colors.purple])
+                        ),
+                        child: Center(child: Text("Request for rest room",textAlign: TextAlign.center, style: GoogleFonts.montserrat(color: Colors.white,fontWeight: FontWeight.w500, fontSize: 25))),
+                        ),
+                        
+                      ]
+                    ),
+                    SizedBox(height: 70),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Container(
+                          width: 500,
+                          height: 120,
+                          decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                          gradient: LinearGradient(colors: [Color(0xFF9A17CF), Colors.purple])
+                        ),
+                        child: Center(child: Text("Request for rest room",textAlign: TextAlign.center, style: GoogleFonts.montserrat(color: Colors.white,fontWeight: FontWeight.w500, fontSize: 25))),
+                        ),
+                        Container(
+                          width: 500,
+                          height: 120,
+                          decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                          gradient: LinearGradient(colors: [Color(0xFF9A17CF), Colors.purple])
+                        ),
+                        child: Center(child: Text("Request for rest room",textAlign: TextAlign.center, style: GoogleFonts.montserrat(color: Colors.white,fontWeight: FontWeight.w500, fontSize: 25))),
+                        ),
+                        
+                      ]
+                    ),
+                                        SizedBox(height: 70),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Container(
+                          width: 500,
+                          height: 120,
+                          decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                          gradient: LinearGradient(colors: [Color(0xFF9A17CF), Colors.purple])
+                        ),
+                        child: Center(child: Text("Request for rest room",textAlign: TextAlign.center, style: GoogleFonts.montserrat(color: Colors.white,fontWeight: FontWeight.w500, fontSize: 25))),
+                        ),
+                        Container(
+                          width: 500,
+                          height: 120,
+                          decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                          gradient: LinearGradient(colors: [Color(0xFF9A17CF), Colors.purple])
+                        ),
+                        child: Center(child: Text("Custom request",textAlign: TextAlign.center, style: GoogleFonts.montserrat(color: Colors.white,fontWeight: FontWeight.w500, fontSize: 25))),
+                        ),
+                        
+                      ]
+                    ),
+                    SizedBox(height: 25),
+                    Text("The screen turns off automatically after 3 minutes of inactivity",textAlign: TextAlign.center, style: GoogleFonts.montserrat(color: Colors.black.withOpacity(0.6),fontWeight: FontWeight.w500, fontSize: 15)),
+                  ]
                 )
               ])),
         ));
