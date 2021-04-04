@@ -50,12 +50,23 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  bool selected = false;
+  Icon firstIcon = Icon(
+    Icons.volume_mute_rounded,
+        color: Color(0xFF9A17CF),
+        size: 35,
+  );
+  Icon secondIcon = Icon(
+    Icons.volume_up_rounded, // Icons.favorite_border
+    color: Color(0xFF9A17CF),
+    size: 35,
+  );
+
   @override
   bool volume;
   void initState() {
     // TODO: implement initState
     super.initState();
-    bool volume = true;
   }
 
   @override
@@ -85,17 +96,32 @@ class _HomeState extends State<Home> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     IconButton(
-                      icon: Icon(
-                        Icons.volume_mute_rounded,
-                        color: Color(0xFF9A17CF),
-                        size: 35,
-                      ),
-                      onPressed: () {
-                        setState(() {
-                          volume = !volume;
-                        });
-                      },
-                    ),
+                        icon: selected
+                            ? firstIcon
+                            : secondIcon,
+                        onPressed: () {
+                          try {
+                            // your code that you want this IconButton do
+                            setState(() {
+                              selected  = !selected;
+                            });
+                          } catch(e) {
+                            print(e);
+                          }
+                        }),
+
+                    // IconButton(
+                    //   icon: Icon(
+                    //     Icons.volume_mute_rounded,
+                    //     color: Color(0xFF9A17CF),
+                    //     size: 35,
+                    //   ),
+                    //   onPressed: () {
+                    //     setState(() {
+                    //
+                    //     });
+                    //   },
+                    // ),
                     Container(
                         height: 120,
                         width: 120,
