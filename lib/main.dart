@@ -60,6 +60,8 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
+    double _width = 500;
+    double _height = 120;
     return Expanded(
         child: MouseRegion(
       //cursor: SystemMouseCursors.none,
@@ -126,18 +128,28 @@ class _HomeState extends State<Home> {
                                     Lottie.asset(
                                       'assets/qr.json',
                                     ),
+                                  
                                     SizedBox(height: 50),
                                     Text(
-                                  'Scan the below QR code with your mobile application client',
-                                  style: GoogleFonts.montserrat(
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.w500,
-                                      fontSize: 15),
-                                ),
-                                SizedBox(height: 30),
-                                PrettyQr(data: "A3z4kMI",
-                                size: 120,
-                                roundEdges: true,)
+                                      'Scan the below QR code with your mobile application client',
+                                      style: GoogleFonts.montserrat(
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 15),
+                                    ),
+                                    SizedBox(height: 30),
+                                    PrettyQr(
+                                      data: "A3z4kMI",
+                                      size: 120,
+                                      roundEdges: true,
+                                    )
+                                    // Text(
+                                    //   'Connected with LG G8X',
+                                    //   style: GoogleFonts.montserrat(
+                                    //       color: Color(0xFF9A17CF),
+                                    //       fontWeight: FontWeight.w500,
+                                    //       fontSize: 15),
+                                    // ),
                                   ]),
                                 ),
                                 actions: <Widget>[
@@ -146,7 +158,11 @@ class _HomeState extends State<Home> {
                                       Navigator.of(context, rootNavigator: true)
                                           .pop(); // dismisses only the dialog and returns nothing
                                     },
-                                    child: new Text('OK'),
+                                    child: new Text(
+                                      'OK',
+                                      style: GoogleFonts.montserrat(
+                                          color: Color(0xFF9A17CF)),
+                                    ),
                                   ),
                                 ],
                               ),
@@ -163,26 +179,31 @@ class _HomeState extends State<Home> {
                 "Use your eyes to navigate through the options and blink 3 times to select",
                 textAlign: TextAlign.center,
                 style: GoogleFonts.montserrat(
-                    color: Colors.black,
+                    color: Colors.black.withOpacity(0.6),
                     fontWeight: FontWeight.w500,
                     fontSize: 25)),
             SizedBox(height: 50),
             Column(children: [
               Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-                Container(
-                  width: 500,
-                  height: 120,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      gradient: LinearGradient(
-                          colors: [Color(0xFF9A17CF), Colors.purple])),
-                  child: Center(
-                      child: Text("Request for rest room",
-                          textAlign: TextAlign.center,
-                          style: GoogleFonts.montserrat(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w500,
-                              fontSize: 25))),
+                GestureDetector(
+                  onTap: () {
+                    
+                  },
+                  child: Container(
+                    width: _width,
+                    height: _height,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        gradient: LinearGradient(
+                            colors: [Color(0xFF9A17CF), Colors.purple])),
+                    child: Center(
+                        child: Text("Request for rest room",
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.montserrat(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w500,
+                                fontSize: 25))),
+                  ),
                 ),
                 Container(
                   width: 500,
