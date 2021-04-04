@@ -106,6 +106,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.2.0"
+  fancy_cursor:
+    dependency: "direct main"
+    description:
+      name: fancy_cursor
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.2"
   ffi:
     dependency: transitive
     description:
@@ -120,6 +127,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "6.1.0"
+  flare_dart:
+    dependency: transitive
+    description:
+      name: flare_dart
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.3.4"
+  flare_flutter:
+    dependency: transitive
+    description:
+      name: flare_flutter
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.6"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -130,6 +151,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  giffy_dialog:
+    dependency: "direct main"
+    description:
+      name: giffy_dialog
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.8.0"
   google_fonts:
     dependency: "direct main"
     description:
@@ -242,6 +270,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.0"
+  pretty_qr_code:
+    dependency: "direct main"
+    description:
+      name: pretty_qr_code
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.1"
   process:
     dependency: transitive
     description:
@@ -249,6 +284,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.2.1"
+  qr:
+    dependency: transitive
+    description:
+      name: qr
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.3.0"
   sky_engine:
     dependency: transitive
     description: flutter
