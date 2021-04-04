@@ -1,3 +1,4 @@
+import 'package:desktopapp/toilet.dart';
 import 'package:flutter/material.dart';
 import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:flutter/rendering.dart';
@@ -187,8 +188,22 @@ class _HomeState extends State<Home> {
               Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
                 GestureDetector(
                   onTap: () {
-                    
-                  },
+
+                  Navigator.of(context).push(PageRouteBuilder(
+                      pageBuilder: (context, animation, anotherAnimation) {
+                        return Toilet();
+                      },
+                      transitionDuration: Duration(milliseconds: 500),
+                      transitionsBuilder:
+                          (context, animation, anotherAnimation, child) {
+                        animation = CurvedAnimation(
+                            curve: Curves.linear, parent: animation);
+                        return ScaleTransition(
+                          scale: animation,
+                          child: child,
+                        );
+                      }));
+                },
                   child: Container(
                     width: _width,
                     height: _height,
