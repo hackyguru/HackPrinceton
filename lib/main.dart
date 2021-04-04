@@ -1,3 +1,4 @@
+import 'package:desktopapp/custom.dart';
 import 'package:desktopapp/toilet.dart';
 import 'package:flutter/material.dart';
 import 'package:bitsdojo_window/bitsdojo_window.dart';
@@ -51,12 +52,23 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  bool selected = false;
+  Icon firstIcon = Icon(
+    Icons.volume_mute_rounded,
+    color: Color(0xFF9A17CF),
+    size: 35,
+  );
+  Icon secondIcon = Icon(
+    Icons.volume_up_rounded, // Icons.favorite_border
+    color: Color(0xFF9A17CF),
+    size: 35,
+  );
+
   @override
   bool volume;
   void initState() {
     // TODO: implement initState
     super.initState();
-    bool volume = true;
   }
 
   @override
@@ -88,17 +100,30 @@ class _HomeState extends State<Home> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     IconButton(
-                      icon: Icon(
-                        Icons.volume_mute_rounded,
-                        color: Color(0xFF9A17CF),
-                        size: 35,
-                      ),
-                      onPressed: () {
-                        setState(() {
-                          volume = !volume;
-                        });
-                      },
-                    ),
+                        icon: selected ? firstIcon : secondIcon,
+                        onPressed: () {
+                          try {
+                            // your code that you want this IconButton do
+                            setState(() {
+                              selected = !selected;
+                            });
+                          } catch (e) {
+                            print(e);
+                          }
+                        }),
+
+                    // IconButton(
+                    //   icon: Icon(
+                    //     Icons.volume_mute_rounded,
+                    //     color: Color(0xFF9A17CF),
+                    //     size: 35,
+                    //   ),
+                    //   onPressed: () {
+                    //     setState(() {
+                    //
+                    //     });
+                    //   },
+                    // ),
                     Container(
                         height: 120,
                         width: 120,
@@ -129,7 +154,7 @@ class _HomeState extends State<Home> {
                                     Lottie.asset(
                                       'assets/qr.json',
                                     ),
-                                  
+
                                     SizedBox(height: 50),
                                     Text(
                                       'Scan the below QR code with your mobile application client',
@@ -188,22 +213,21 @@ class _HomeState extends State<Home> {
               Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
                 GestureDetector(
                   onTap: () {
-
-                  Navigator.of(context).push(PageRouteBuilder(
-                      pageBuilder: (context, animation, anotherAnimation) {
-                        return Toilet();
-                      },
-                      transitionDuration: Duration(milliseconds: 500),
-                      transitionsBuilder:
-                          (context, animation, anotherAnimation, child) {
-                        animation = CurvedAnimation(
-                            curve: Curves.linear, parent: animation);
-                        return ScaleTransition(
-                          scale: animation,
-                          child: child,
-                        );
-                      }));
-                },
+                    Navigator.of(context).push(PageRouteBuilder(
+                        pageBuilder: (context, animation, anotherAnimation) {
+                          return Toilet();
+                        },
+                        transitionDuration: Duration(milliseconds: 500),
+                        transitionsBuilder:
+                            (context, animation, anotherAnimation, child) {
+                          animation = CurvedAnimation(
+                              curve: Curves.linear, parent: animation);
+                          return ScaleTransition(
+                            scale: animation,
+                            child: child,
+                          );
+                        }));
+                  },
                   child: Container(
                     width: _width,
                     height: _height,
@@ -212,7 +236,7 @@ class _HomeState extends State<Home> {
                         gradient: LinearGradient(
                             colors: [Color(0xFF9A17CF), Colors.purple])),
                     child: Center(
-                        child: Text("Request for rest room",
+                        child: Text("Toilet",
                             textAlign: TextAlign.center,
                             style: GoogleFonts.montserrat(
                                 color: Colors.white,
@@ -220,86 +244,176 @@ class _HomeState extends State<Home> {
                                 fontSize: 25))),
                   ),
                 ),
-                Container(
-                  width: 500,
-                  height: 120,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      gradient: LinearGradient(
-                          colors: [Color(0xFF9A17CF), Colors.purple])),
-                  child: Center(
-                      child: Text("Request for rest room",
-                          textAlign: TextAlign.center,
-                          style: GoogleFonts.montserrat(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w500,
-                              fontSize: 25))),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).push(PageRouteBuilder(
+                        pageBuilder: (context, animation, anotherAnimation) {
+                          return Toilet();
+                        },
+                        transitionDuration: Duration(milliseconds: 500),
+                        transitionsBuilder:
+                            (context, animation, anotherAnimation, child) {
+                          animation = CurvedAnimation(
+                              curve: Curves.linear, parent: animation);
+                          return ScaleTransition(
+                            scale: animation,
+                            child: child,
+                          );
+                        }));
+                  },
+                  child: Container(
+                    width: 500,
+                    height: 120,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        gradient: LinearGradient(
+                            colors: [Color(0xFF9A17CF), Colors.purple])),
+                    child: Center(
+                        child: Text("Shower",
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.montserrat(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w500,
+                                fontSize: 25))),
+                  ),
                 ),
               ]),
               SizedBox(height: 70),
               Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-                Container(
-                  width: 500,
-                  height: 120,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      gradient: LinearGradient(
-                          colors: [Color(0xFF9A17CF), Colors.purple])),
-                  child: Center(
-                      child: Text("Request for rest room",
-                          textAlign: TextAlign.center,
-                          style: GoogleFonts.montserrat(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w500,
-                              fontSize: 25))),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).push(PageRouteBuilder(
+                        pageBuilder: (context, animation, anotherAnimation) {
+                          return Toilet();
+                        },
+                        transitionDuration: Duration(milliseconds: 500),
+                        transitionsBuilder:
+                            (context, animation, anotherAnimation, child) {
+                          animation = CurvedAnimation(
+                              curve: Curves.linear, parent: animation);
+                          return ScaleTransition(
+                            scale: animation,
+                            child: child,
+                          );
+                        }));
+                  },
+                  child: Container(
+                    width: 500,
+                    height: 120,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        gradient: LinearGradient(
+                            colors: [Color(0xFF9A17CF), Colors.purple])),
+                    child: Center(
+                        child: Text("Food",
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.montserrat(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w500,
+                                fontSize: 25))),
+                  ),
                 ),
-                Container(
-                  width: 500,
-                  height: 120,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      gradient: LinearGradient(
-                          colors: [Color(0xFF9A17CF), Colors.purple])),
-                  child: Center(
-                      child: Text("Request for rest room",
-                          textAlign: TextAlign.center,
-                          style: GoogleFonts.montserrat(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w500,
-                              fontSize: 25))),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).push(PageRouteBuilder(
+                        pageBuilder: (context, animation, anotherAnimation) {
+                          return Toilet();
+                        },
+                        transitionDuration: Duration(milliseconds: 500),
+                        transitionsBuilder:
+                            (context, animation, anotherAnimation, child) {
+                          animation = CurvedAnimation(
+                              curve: Curves.linear, parent: animation);
+                          return ScaleTransition(
+                            scale: animation,
+                            child: child,
+                          );
+                        }));
+                  },
+                  child: Container(
+                    width: 500,
+                    height: 120,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        gradient: LinearGradient(
+                            colors: [Color(0xFF9A17CF), Colors.purple])),
+                    child: Center(
+                        child: Text("Water",
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.montserrat(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w500,
+                                fontSize: 25))),
+                  ),
                 ),
               ]),
               SizedBox(height: 70),
               Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-                Container(
-                  width: 500,
-                  height: 120,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      gradient: LinearGradient(
-                          colors: [Color(0xFF9A17CF), Colors.purple])),
-                  child: Center(
-                      child: Text("Request for rest room",
-                          textAlign: TextAlign.center,
-                          style: GoogleFonts.montserrat(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w500,
-                              fontSize: 25))),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).push(PageRouteBuilder(
+                        pageBuilder: (context, animation, anotherAnimation) {
+                          return Toilet();
+                        },
+                        transitionDuration: Duration(milliseconds: 500),
+                        transitionsBuilder:
+                            (context, animation, anotherAnimation, child) {
+                          animation = CurvedAnimation(
+                              curve: Curves.linear, parent: animation);
+                          return ScaleTransition(
+                            scale: animation,
+                            child: child,
+                          );
+                        }));
+                  },
+                  child: Container(
+                    width: 500,
+                    height: 120,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        gradient: LinearGradient(
+                            colors: [Color(0xFF9A17CF), Colors.purple])),
+                    child: Center(
+                        child: Text("Bed",
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.montserrat(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w500,
+                                fontSize: 25))),
+                  ),
                 ),
-                Container(
-                  width: 500,
-                  height: 120,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      gradient: LinearGradient(
-                          colors: [Color(0xFF9A17CF), Colors.purple])),
-                  child: Center(
-                      child: Text("Custom request",
-                          textAlign: TextAlign.center,
-                          style: GoogleFonts.montserrat(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w500,
-                              fontSize: 25))),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).push(PageRouteBuilder(
+                        pageBuilder: (context, animation, anotherAnimation) {
+                          return Custom();
+                        },
+                        transitionDuration: Duration(milliseconds: 500),
+                        transitionsBuilder:
+                            (context, animation, anotherAnimation, child) {
+                          animation = CurvedAnimation(
+                              curve: Curves.linear, parent: animation);
+                          return ScaleTransition(
+                            scale: animation,
+                            child: child,
+                          );
+                        }));
+                  },
+                                  child: Container(
+                    width: 500,
+                    height: 120,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        gradient: LinearGradient(
+                            colors: [Color(0xFF9A17CF), Colors.purple])),
+                    child: Center(
+                        child: Text("Custom request",
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.montserrat(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w500,
+                                fontSize: 25))),
+                  ),
                 ),
               ]),
               SizedBox(height: 25),

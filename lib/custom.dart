@@ -9,47 +9,13 @@ import 'package:giffy_dialog/giffy_dialog.dart';
 import 'package:pretty_qr_code/pretty_qr_code.dart';
 import 'dart:async';
 
-class Toilet extends StatefulWidget {
+class Custom extends StatefulWidget {
   @override
-  _ToiletState createState() => _ToiletState();
+  _CustomState createState() => _CustomState();
 }
 
-class _ToiletState extends State<Toilet> {
-  Timer _timer;
-  int _start = 5;
+class _CustomState extends State<Custom> {
 
-  void startTimer() {
-    const oneSec = const Duration(seconds: 1);
-    _timer = new Timer.periodic(
-      oneSec,
-      (Timer timer) {
-        if (_start == 0) {
-          setState(() {
-            timer.cancel();
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => MyApp()));
-          });
-        } else {
-          setState(() {
-            _start--;
-          });
-        }
-      },
-    );
-  }
-
-  @override
-  void dispose() {
-    _timer.cancel();
-    super.dispose();
-  }
-
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    startTimer();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -90,9 +56,9 @@ class _ToiletState extends State<Toilet> {
                 Material(
                   type: MaterialType.transparency,
                   child: Text(
-                    "$_start",
-                    style: TextStyle(
-                        fontSize: 150,
+                    "Use permutations to speak using your iris",
+                    style: GoogleFonts.montserrat(
+                        fontSize: 50,
                         fontWeight: FontWeight.w500,
                         color: Colors.white),
                   ),
@@ -102,7 +68,7 @@ class _ToiletState extends State<Toilet> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    startTimer();
+                    
                   },
                   child: Container(
                     width: 400,
@@ -113,7 +79,7 @@ class _ToiletState extends State<Toilet> {
                     padding: EdgeInsets.all(10.0),
                     child: Material(
                       type: MaterialType.transparency,
-                      child: Text("Blink 3 times if it was a mistake",
+                      child: Text("Your message appears here",
                           textAlign: TextAlign.center,
                           style: GoogleFonts.montserrat(
                             fontSize: 20,
